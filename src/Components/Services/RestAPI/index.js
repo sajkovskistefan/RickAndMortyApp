@@ -10,3 +10,13 @@ export const getData = (cat,number) => {
             return res.json();
         })
 };
+
+export const getCharacter = (cat,id) => {
+    return fetch(`${BASE_URL}/${cat}/${id}`, 
+    {
+        method: "GET"
+    })
+    .then(res => {
+        return res.json();
+    });
+};

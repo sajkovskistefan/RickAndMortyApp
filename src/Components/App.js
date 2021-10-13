@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import Characters from './Pages/Characters';
 import Episodes from './Pages/Episodes';
 import Locations from './Pages/Locations';
+import Character from './Pages/Character';
 import { ROUTES } from './Constants/Routes';
 import Nav from './Nav';
 
@@ -23,6 +24,7 @@ function App() {
 				<Route path={ROUTES.CHARACTERS} component={Characters}/>
 				<Route path={ROUTES.EPISODES} component={Episodes} />
 				<Route path={ROUTES.LOCATIONS} component={Locations} />
+				<Route path={ROUTES.CHARACTER} component={Character} />
 			</Switch>
 		</div>
 	</BrowserRouter>
