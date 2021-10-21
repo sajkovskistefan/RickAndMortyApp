@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import { getData } from '../../Services/RestAPI';
 import { ROUTES } from '../../Constants/Routes';
@@ -15,11 +16,19 @@ const Characters = () => {
     const [number, setNumber] = useState(1);
     const [decrementDisabled, setDecrementDisabled] = useState(false);
     const [incrementDisabled, setIncrementDisabled] = useState(false);
+    const id = useParams();
     const cat = "character";
+
+    console.log(id)
 
     const increment = () => {
         if(number === info.pages){
-            alert("No more pages");
+            Swal.fire({
+                title: 'Error!',
+                text: 'No more pages',
+                icon: 'error',
+                confirmButtonText: 'Cool',
+              })
         }else {
             setNumber(number + 1)
         }
@@ -27,7 +36,12 @@ const Characters = () => {
 
     const decrement = () => {
         if(number <= 1){
-            alert("No previous pages")
+            Swal.fire({
+                title: 'Error!',
+                text: 'No previous pages',
+                icon: 'error',
+                confirmButtonText: 'Cool'
+              })
         }else {
             setNumber(number - 1)
         }
@@ -76,12 +90,7 @@ const Characters = () => {
     },[number]);
 
     const goToCharacter = (character) => {
-        history.push({
-            pathname: ROUTES.CHARACTER,
-            state: {
-                id: character.id
-            }
-        })
+        history.push(`${ROUTES.CHARACTER}/${character.id}`)
     };
 
     return (

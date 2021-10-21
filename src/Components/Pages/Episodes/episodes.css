@@ -1,4 +1,4 @@
-.episode-container {
+.episode-container-without-btn {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -39,4 +39,25 @@
     1px -1px 0 var(--clr-black-decor),
     -1px 1px 0 var(--clr-black-decor),
     1px 1px 0 var(--clr-black-decor); 
+}
+
+.swal2-popup {
+    background-color: var(--clr-background-color);
+    font-family: 'Gluten', cursive;
+    /* color: var(--clr-dark-blue); */
+    color: tomato;
+    text-shadow:
+    -1px -1px 0 var(--clr-black-decor),  
+    1px -1px 0 var(--clr-black-decor),
+    -1px 1px 0 var(--clr-black-decor),
+    1px 1px 0 var(--clr-black-decor); 
+}
+
+.swal-text-color {
+    color: tomato;
+    
+}
+
+.aria-label {
+    color: tomato;
 }
