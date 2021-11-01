@@ -32,6 +32,7 @@ const Episodes = () => {
         }
     };
 
+    const color = "#53abe"
     const decrement = () => {
         if (number <= 1) {
             Swal.fire({
@@ -40,7 +41,7 @@ const Episodes = () => {
                 text: 'No previous pages',
                 icon: 'error',
                 confirmButtonText: 'Cool',
-                confirmButtonColor: "#53abee",
+                confirmButtonColor: color,
                 iconColor: "#53abee",
                 customClass: {
                     text: "swal-text-color"
@@ -97,8 +98,16 @@ const Episodes = () => {
         }
     }, [number]);
 
+    console.log(info)
+
     const goToEpisode = (episode) => {
-        history.push(`${ROUTES.EPISODE}/${episode.id}`);
+        // history.push(`${ROUTES.EPISODE}/${episode.id}`);
+        history.push({
+            pathname: `${ROUTES.EPISODE}/${episode.id}`,
+            state: {
+                count: info.count
+            }
+        })
     };
 
     console.log(episodes)

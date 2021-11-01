@@ -1,29 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
-import { getCharacter } from '../../Services/RestAPI';
+import { getCharacter, getAllInfo } from '../../Services/RestAPI';
 import { ROUTES } from '../../Constants/Routes';
 
 import './character.css';
 
 const Character = () => {
     const [character, setCharacter] = useState();
+    const [count, setCount] = useState();
+
     const cat = 'character';
     const id = useParams().id;
 
     const history = useHistory();
 
     useEffect(() => {
-        if (id < 667) {
+        getAllInfo(cat)
+        .then(data => setCount(data.info.count))
+        if (id < count) {
             console.log("this is from IF statement")
             getCharacter(cat, id)
                 .then(data => setCharacter(data))
                 .catch(err => console.error(err))
         } else {
             console.log("this is from ELSE statement")
-            history.push(ROUTES[404])
+            // history.push(ROUTES[404])
         }
-    }, [id]);
+    }, [id, history, count]);
 
     return (
         <div className="character-page-container">
