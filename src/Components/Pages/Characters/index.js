@@ -26,11 +26,11 @@ const Characters = () => {
     const [radio, setRadio] = useState("alive");
 
 
-	const status = [
-		{ value: 'alive', label: 'Alive' },
+    const status = [
+        { value: 'alive', label: 'Alive' },
         { value: "dead", label: 'Dead' },
         { value: "unknown", label: 'Unknown' }
-	];
+    ];
     const id = useParams();
     const cat = "character";
 
@@ -139,20 +139,23 @@ const Characters = () => {
     // console.log(characters)
     return (
         <div className="page-container">
-            <Input
-                type="text"
-                name={name}
-                value={name}
-                onChange={handleChange}
-                onFocus={resetNameValue}
-            />
-            <RadioGroup
-            	options={status}
-                name='status'
-                disabled={false}
-                value={radio}
-                onChange={setRadio}
-            />
+            <div className="input-radio-container">
+                <Input
+                    className="characters_input"
+                    type="text"
+                    name={name}
+                    value={name}
+                    onChange={handleChange}
+                    onFocus={resetNameValue}
+                />
+                <RadioGroup
+                    options={status}
+                    name='status'
+                    disabled={false}
+                    value={radio}
+                    onChange={setRadio}
+                />
+            </div>
             <h1 className="page-header">Characters</h1>
             <div className="cards-container">
                 {charactersByName ? charactersByName.map((character) => {

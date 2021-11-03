@@ -7,6 +7,7 @@ import Character from './Pages/Character';
 import Location from './Pages/Location';
 import Episode from './Pages/Episode';
 import NotFound from './Pages/404';
+import Homepage from './Pages/Homepage';
 import { ROUTES } from './Constants/Routes';
 import Nav from './Nav';
 
@@ -20,17 +21,18 @@ function App() {
 				<header className="App-header" >
 					<Link to={ROUTES.HOME} className="app-link" >
 						Rick and Morty App
-				</Link>
+					</Link>
 				</header>
 				<Nav />
 				<Switch>
+					<Route exact path={ROUTES.HOME} component={Homepage} />
 					<Route path={ROUTES.CHARACTERS} component={Characters} />
 					<Route path={ROUTES.EPISODES} component={Episodes} />
 					<Route path={ROUTES.LOCATIONS} component={Locations} />
 					<Route path={`${ROUTES.CHARACTER}${ROUTES.ID}`} component={Character} />
 					<Route path={ROUTES.LOCATION} component={Location} />
 					<Route path={`${ROUTES.EPISODE}${ROUTES.ID}`} component={Episode} />
-					<Route path={ROUTES[404]} component={NotFound}/>
+					<Route path={ROUTES[404]} component={NotFound} />
 				</Switch>
 			</div>
 		</BrowserRouter>

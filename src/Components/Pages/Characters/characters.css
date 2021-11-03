@@ -2,6 +2,14 @@
     margin-left: 20%;
     margin-right: 20%;
 }
+
+.input-radio-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
     .page-header {
         font-family: 'Gluten', cursive;
         font-size: 2rem;
@@ -15,6 +23,22 @@
         text-align: center;    
         padding: 1.5rem;
     }
+
+    .characters_input {
+        font-family: 'Gluten', cursive;
+        color: var(--clr-light-pink);
+        border-radius: 10px;
+        background-color: var(--clr-black-decor);
+        height: 1rem;
+        width: 12rem;
+        text-align: center;
+        letter-spacing: 4px;
+    }
+
+    .characters_input:focus {
+        outline: none !important;
+        border: 1px solid var(--clr-light-pink)
+      }
 
     .cards-container {
         display: flex;
