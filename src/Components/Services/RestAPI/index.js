@@ -30,3 +30,14 @@ export const getAllInfo = (cat) => {
         })
         .catch(err => console.error(err))
 };
+
+export const getCharactersByName = (cat, number, name, radio) => {
+    return fetch(`${BASE_URL}/${cat}/?page=${number}&name=${name}&status=${radio}`,
+    {
+        method: "GET"
+    })
+    .then(res => {
+        return res.json()
+    })
+    .catch(err => console.error(err))
+};
