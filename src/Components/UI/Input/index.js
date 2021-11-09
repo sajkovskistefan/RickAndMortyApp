@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Input = ({ name, type, value, onChange, onFocus, className }) => {
+const Input = ({ name, type, value, onChange, onFocus, className, onBlur }) => {
     return (
         <input
             className={className}
@@ -9,6 +9,7 @@ const Input = ({ name, type, value, onChange, onFocus, className }) => {
             value={value}
             onChange={onChange}
             onFocus={onFocus}
+            onBlur={onBlur}
         />
     );
 };
