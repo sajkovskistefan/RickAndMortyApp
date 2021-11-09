@@ -23,7 +23,7 @@ const Characters = () => {
     const [number, setNumber] = useState(1);
     const [decrementDisabled, setDecrementDisabled] = useState(false);
     const [incrementDisabled, setIncrementDisabled] = useState(false);
-    const [radio, setRadio] = useState("alive");
+    const [radio, setRadio] = useState("");
 
 
     const status = [
@@ -85,6 +85,8 @@ const Characters = () => {
         };
     };
 
+    console.log(name)
+
     useEffect(() => {
         if (name === undefined) {
             getData(cat, number)
@@ -93,7 +95,16 @@ const Characters = () => {
                     setInfo(data.info)
                 })
         } else {
-
+            getCharactersByName(cat, number, name, radio)
+            .then(data => {
+                setCharactersByName(data.results)
+                // setCharactersByNameInfo(data.info)
+                if (data.info != undefined) {
+                    setInfo(data.info)
+                } else {
+                    console.log("this is from else")
+                }
+            })
         }
         if (number <= 1) {
             setDecrementDisabled(true)
@@ -108,16 +119,16 @@ const Characters = () => {
         if (name === "" || name === undefined) {
             setName(undefined)
         }
-        getCharactersByName(cat, number, name, radio)
-            .then(data => {
-                setCharactersByName(data.results)
-                // setCharactersByNameInfo(data.info)
-                if (data.info != undefined) {
-                    setInfo(data.info)
-                } else {
-                    console.log("this is from else")
-                }
-            })
+        // getCharactersByName(cat, number, name, radio)
+        //     .then(data => {
+        //         setCharactersByName(data.results)
+        //         // setCharactersByNameInfo(data.info)
+        //         if (data.info != undefined) {
+        //             setInfo(data.info)
+        //         } else {
+        //             console.log("this is from else")
+        //         }
+        //     })
     }, [number, name, radio]);
 
     const goToCharacter = (character) => {
@@ -130,6 +141,7 @@ const Characters = () => {
 
     const resetNameValue = () => {
         setName("")
+        setRadio("")
         setNumber(1)
     };
 
