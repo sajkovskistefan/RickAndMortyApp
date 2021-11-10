@@ -22,32 +22,37 @@ const Episodes = () => {
     const increment = () => {
         if (number === info.pages) {
             Swal.fire({
-                title: 'Error!',
-                text: 'No more pages',
+                title: "<h5 style='color:#f9bf1e', >" + "Error" + "</h5>",
+                text: 'No previous pages',
                 icon: 'error',
-                confirmButtonText: 'Cool'
+                confirmButtonText: 'Cool',
+                confirmButtonText: "Got it",
+                iconColor: "#f675da",
+                customClass: {
+                    text: "swal-text-color",
+                    confirmButton: "error-btn-swal"
+                },
+                buttonsStyling: false
             })
         } else {
             setNumber(number + 1)
         }
     };
 
-    const color = "#53abe"
     const decrement = () => {
         if (number <= 1) {
             Swal.fire({
-                // title: 'Error!',
-                title: "<h5 style='color:#53abee', >" + "Error" + "</h5>",
+                title: "<h5 style='color:#f9bf1e', >" + "Error" + "</h5>",
                 text: 'No previous pages',
                 icon: 'error',
                 confirmButtonText: 'Cool',
-                confirmButtonColor: color,
-                iconColor: "#53abee",
+                confirmButtonText: "Got it",
+                iconColor: "#f675da",
                 customClass: {
-                    text: "swal-text-color"
+                    text: "swal-text-color",
+                    confirmButton: "error-btn-swal"
                 },
-                confirmButtonAriaLabel: "aria-label"
-
+                buttonsStyling: false
             })
         } else {
             setNumber(number - 1)

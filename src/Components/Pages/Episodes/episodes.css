@@ -44,8 +44,6 @@
 .swal2-popup {
     background-color: var(--clr-background-color);
     font-family: 'Gluten', cursive;
-    /* color: var(--clr-dark-blue); */
-    color: tomato;
     text-shadow:
     -1px -1px 0 var(--clr-black-decor),  
     1px -1px 0 var(--clr-black-decor),
@@ -53,11 +51,21 @@
     1px 1px 0 var(--clr-black-decor); 
 }
 
-.swal-text-color {
-    color: tomato;
-    
+.error-btn-swal {
+    border: 2px solid var(--clr-black-decor);
+    padding: 1rem;
+    border-radius: 30px;
+    background-color: var(--clr-light-yellow);
+    font-family: 'Gluten', cursive;
+    font-size: 1rem;
+    font-weight: 500; 
+    color: var(--clr-dark-blue);
 }
 
-.aria-label {
-    color: tomato;
+.swal-text-color {
+    color: var(--clr-light-yellow);
+}
+
+.error-btn-swal:hover {
+    cursor: pointer;
 }

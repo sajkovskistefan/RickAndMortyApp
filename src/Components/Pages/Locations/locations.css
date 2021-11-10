@@ -6,13 +6,34 @@
 }
 
 .location-container {
-  
     display: flex;
     flex-direction: column;
     width: 24%;
     padding: 2rem;
-    
-  
     list-style: none;
- 
 }
+
+.static-value-contanier{
+    display: flex;
+    flex-direction: column;
+    font-family: "Gluten";
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: var(--clr-light-pink);
+    text-shadow: 
+    -1px -1px 0 var(--clr-black-decor),  
+    1px -1px 0 var(--clr-black-decor),
+    -1px 1px 0 var(--clr-black-decor),
+     1px 1px 0 var(--clr-black-decor);
+     justify-content: space-around;
+}
+
+.static-value-paragraph {
+    text-align: center;
+    color: var(--clr-light-yellow);
+}
+.paragraph {
+    display: inline;
+   text-align: center;
+}
+

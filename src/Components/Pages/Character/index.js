@@ -37,6 +37,7 @@ const Character = () => {
                         <img className="character-image" src={character.image} alt="character" />
                     </div>
                     <div className="character-info">
+                        <span >{character.name}</span>
                         <span>{character.gender}</span>
                         <span>{character.location.name}</span>
                         <span>{character.origin.name}</span>

@@ -73,10 +73,17 @@ const Locations = () => {
     const increment = () => {
         if (info && info.pages && number === info.pages) {
             Swal.fire({
-                title: 'Error!',
+                title: "<h5 style='color:#f9bf1e', >" + "Error" + "</h5>",
                 text: 'No previous pages',
                 icon: 'error',
-                confirmButtonText: 'Cool'
+                confirmButtonText: 'Cool',
+                confirmButtonText: "Got it",
+                iconColor: "#f675da",
+                customClass: {
+                    text: "swal-text-color",
+                    confirmButton: "error-btn-swal"
+                },
+                buttonsStyling: false
             })
         } else {
             setNumber(number + 1)
@@ -86,10 +93,17 @@ const Locations = () => {
     const decrement = () => {
         if (number <= 1) {
             Swal.fire({
-                title: 'Error!',
+                title: "<h5 style='color:#f9bf1e', >" + "Error" + "</h5>",
                 text: 'No previous pages',
                 icon: 'error',
-                confirmButtonText: 'Cool'
+                confirmButtonText: 'Cool',
+                confirmButtonText: "Got it",
+                iconColor: "#f675da",
+                customClass: {
+                    text: "swal-text-color",
+                    confirmButton: "error-btn-swal"
+                },
+                buttonsStyling: false
             })
         } else {
             setNumber(number - 1)
@@ -136,9 +150,9 @@ const Locations = () => {
     console.log(locations)
     console.log(info)
 
-    const goToLocation = (location) => {
-        history.push(`${ROUTES.LOCATION}/${location.id}`)
-    }
+    // const goToLocation = (location) => {
+    //     history.push(`${ROUTES.LOCATION}/${location.id}`)
+    // }
 
     return (
         <div className="page-container">
@@ -146,11 +160,11 @@ const Locations = () => {
             <div className="whole-map-container">
                 {locations ? locations.map((location) => {
                     return (
-                        <ul className="location-container" onClick={() => goToLocation(location)} key={location.id}>
-                            <li className="static-value"> Name: {location.name}</li>
-                            <li className="static-value">Type: {location.type}</li>
-                            <li className="static-value">Dimension: {location.dimension}</li>
-                            <li className="dynaminc-value">Residents</li>
+                        <ul className="location-container">
+                            <li className="static-value-contanier"> <p className="static-value-paragraph">Name:</p><p className="paragraph">{location.name}</p></li>
+                            <li className="static-value-contanier"> <p className="static-value-paragraph">Type: </p><p className="paragraph">{location.type}</p></li>
+                            <li className="static-value-contanier"> <p className="static-value-paragraph">Dimension:</p> <p className="paragraph">{location.dimension}</p></li>
+                            {/* <li className="dynaminc-value"><p>Residents</p></li> */}
                         </ul>
                     )
 
