@@ -1,60 +1,7 @@
-// import React, { useEffect, useState } from 'react';
-// import { useHistory } from 'react-router-dom';
-
-// import { getData } from '../../Services/RestAPI';
-// import { ROUTES } from '../../Constants/Routes';
-
-// const Locations = () => {
-//     const [locations, setLocations] = useState();
-//     const [number, setNumber] = useState(1);
-//     const cat = 'location';
-//     const history = useHistory();
-
-//     useEffect(() => {
-//         getData(cat, number)
-//             .then(data => setLocations(data.results))
-//     }, []);
-
-//     const goToLocationPage = (location) => {
-//         history.push(`${ROUTES.LOCATION}/${location.id}`);
-//     };
-
-//     return (
-//         <div>
-//             <h1>Locations</h1>
-//             {locations ? locations.map((location) => {
-//                 return (
-//                     <div onClick={() => goToLocationPage(location)} key={location.id}>
-//                         <p>{location.name}</p>
-//                         <p>{location.type}</p>
-//                         <p>{location.dimension}</p>
-//                     </div>
-//                 );
-//             }) : null}
-//         </div>
-//     );
-// };
-
-// export default Locations;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2'
 
 import { useHistory } from 'react-router-dom';
-import { ROUTES } from '../../Constants/Routes';
 import { getData } from '../../Services/RestAPI';
 import './locations.css'
 
@@ -149,11 +96,6 @@ const Locations = () => {
     }, [number]);
     console.log(locations)
     console.log(info)
-
-    // const goToLocation = (location) => {
-    //     history.push(`${ROUTES.LOCATION}/${location.id}`)
-    // }
-
     return (
         <div className="page-container">
             <h1 className="page-header">Locations</h1>
@@ -164,10 +106,8 @@ const Locations = () => {
                             <li className="static-value-contanier"> <p className="static-value-paragraph">Name:</p><p className="paragraph">{location.name}</p></li>
                             <li className="static-value-contanier"> <p className="static-value-paragraph">Type: </p><p className="paragraph">{location.type}</p></li>
                             <li className="static-value-contanier"> <p className="static-value-paragraph">Dimension:</p> <p className="paragraph">{location.dimension}</p></li>
-                            {/* <li className="dynaminc-value"><p>Residents</p></li> */}
                         </ul>
                     )
-
                 }) : null}
             </div>
             <div className className="btn-container">

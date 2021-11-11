@@ -1,0 +1,26 @@
+.page-header-homepage {
+    font-family: 'Gluten', cursive;
+    font-size: 2rem;
+    font-weight: 300; 
+    color: var(--clr-light-yellow);
+    text-shadow:
+    -1px -1px 0 var(--clr-black-decor),  
+    1px -1px 0 var(--clr-black-decor),
+    -1px 1px 0 var(--clr-black-decor),
+    1px 1px 0 var(--clr-black-decor);    
+    text-align: center;    
+    padding: 3rem;
+}
+
+.homepage-paragraph {
+    font-family: 'Gluten', cursive;
+    font-size: 1.5rem;
+    font-weight: 200; 
+    color: var(--clr-light-pink);
+    text-shadow:
+    -1px -1px 0 var(--clr-black-decor),  
+    1px -1px 0 var(--clr-black-decor),
+    -1px 1px 0 var(--clr-black-decor),
+    1px 1px 0 var(--clr-black-decor);    
+    text-align: center;    
+}
